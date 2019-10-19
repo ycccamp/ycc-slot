@@ -127,13 +127,13 @@ const HomeComponent: React.FC = props => {
             />
           </Box>
           <Flex flexWrap={`wrap`}>
-            <Box width={1 / 2} p={2}>
+            <Box width={1 / 2} py={2} pr={2}>
               <Label htmlFor='title' pb={1}>Start time</Label>
               <StyledInput
                 placeholder='11:12'
               />
             </Box>
-            <Box width={1 / 2} p={2}>
+            <Box width={1 / 2} py={2} pl={2}>
               <Label htmlFor='title' pb={1}>Duration (minutes)</Label>
               <StyledSelect
                 id='duration'
