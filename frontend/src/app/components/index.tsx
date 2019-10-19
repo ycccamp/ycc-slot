@@ -4,14 +4,14 @@ import { Helmet } from 'react-helmet'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import Fonts from './fonts'
+import Global from './global'
 
 import * as Routes from './routes'
 
 const AppComponent: React.FC = () => {
   return (
     <Router>
-      <Fonts />
+      <Global />
       <Helmet defaultTitle='YCC slot' titleTemplate='%s · YCC slot' />
       <Switch>
         <Route

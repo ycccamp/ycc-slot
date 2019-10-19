@@ -1,38 +1,46 @@
 import React from 'react'
 
+import dayjs from 'dayjs'
 import { FaPencilAlt } from 'react-icons/fa'
 
 import { Box, Card, Flex, Text } from 'rebass'
 import styled from 'styled-components'
 
-const ShadowCard = styled(Card)`
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+import { ISlotProps } from '../@types/ISlotProps'
+
+const Tag = styled(Box)`
+  background: rgb(255, 64, 129);
+  border-radius: 3px;
+  color: #fff;
 `
 
-const HomeSlotComponent: React.FC = props => {
+const HomeSlotComponent: React.FC<ISlotProps> = props => {
+  const {slot} = props
+
+  const time = dayjs(`${Math.floor(slot.begin / 24)}:${slot.begin % 60}`, 'H:m')
+
   return (
-    <ShadowCard py={4} px={4}>
+    <Card py={2} px={4}>
       <Flex>
         <Box>
-          <Box p={2}>
-            <Text fontSize={32} fontWeight={500}>09:00 - 10:30</Text>
-            <Text fontSize={16} color={`#a0aec0`}>War room</Text>
-          </Box>
-          <Box p={2}>
-            <Text fontSize={18}>Registration</Text>
-          </Box>
+          <Text fontSize={16} p={1}>Registration</Text>
+          <Text fontSize={14} color={`#718096`} p={1}>09:30 - 10:30 / War room</Text>
         </Box>
         <Box mx={`auto`} />
-        <Box mt={3}>
+        <Box mt={2}>
           <Box>
             <FaPencilAlt color={`#718096`} />
           </Box>
         </Box>
       </Flex>
-    </ShadowCard>
+      <Box>
+        <Flex>
+          <Box py={2}>
+            <Tag fontSize={12} px={2} py={1}>Riffy</Tag>
+          </Box>
+        </Flex>
+      </Box>
+    </Card>
   )
 }
 

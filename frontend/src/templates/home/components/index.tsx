@@ -1,8 +1,11 @@
 import React from 'react'
 
+import dayjs from 'dayjs'
+
 import { Box, Card, Flex, Text } from 'rebass'
 import styled from 'styled-components'
 
+import Date from './date'
 import Slot from './slot'
 
 const ShadowCard = styled(Card)`
@@ -14,20 +17,40 @@ const ShadowCard = styled(Card)`
 
 const HomeComponent: React.FC = props => {
   return (
-    <Flex justifyContent={`center`}>
-      <Box width={12 / 24}>
-        <Flex justifyContent={`center`} flexWrap={`wrap`}>
-          <Box width={2 / 5} p={4}>
-            <ShadowCard py={3} px={4}>
-              <Text fontSize={21} fontWeight={500}>Add slot</Text>
-            </ShadowCard>
-          </Box>
-          <Box width={2 / 5} p={4}>
-            <Slot />
-          </Box>
-        </Flex>
-      </Box>
-    </Flex>
+    <Box py={3}>
+      <Date date={dayjs().format('YYYY-MM-DD')} />
+      <Flex justifyContent={`center`} pt={4}>
+        <Box width={22 / 24}>
+          <Slot slot={{
+              begin: 387,
+              duration: 20,
+              title: 'Registration',
+              venue: 'Somewhere',
+              date: '2020-02-21',
+              workspace: 'someid',
+            }}
+          />
+          <Slot slot={{
+              begin: 387,
+              duration: 20,
+              title: 'Registration',
+              venue: 'Somewhere',
+              date: '2020-02-21',
+              workspace: 'someid',
+            }}
+          />
+          <Slot slot={{
+              begin: 387,
+              duration: 20,
+              title: 'Registration',
+              venue: 'Somewhere',
+              date: '2020-02-21',
+              workspace: 'someid',
+            }}
+          />
+        </Box>
+      </Flex>
+    </Box>
   )
 }
 

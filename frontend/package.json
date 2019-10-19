@@ -10,6 +10,7 @@
     "@types/react-router-dom": "^5.1.0",
     "@types/rebass": "^4.0.3",
     "@types/styled-components": "^4.1.19",
+    "dayjs": "^1.8.16",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
