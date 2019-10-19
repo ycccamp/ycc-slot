@@ -23,8 +23,8 @@ const HomeSlotComponent: React.FC<ISlotProps> = props => {
     <Card py={2} px={4}>
       <Flex>
         <Box>
-          <Text fontSize={16} p={1}>Registration</Text>
-          <Text fontSize={14} color={`#718096`} p={1}>09:30 - 10:30 / War room</Text>
+          <Text fontSize={16} p={1}>{slot.title}</Text>
+          <Text fontSize={14} color={`#718096`} p={1}>09:30 - 10:30 / {slot.venue}</Text>
         </Box>
         <Box mx={`auto`} />
         <Box mt={2}>

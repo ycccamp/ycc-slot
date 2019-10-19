@@ -25,7 +25,7 @@ const HomeDateComponent: React.FC<IDateProps> = props => {
   const today = dayjs(date)
 
   return (
-    <ShadowFlex justifyContent={`center`}>
+    <ShadowFlex justifyContent={`center`} pt={3}>
       <SelectorBox width={1 / 4} selected={selectedDate.isSame(today.subtract(1, 'day'))} onClick={() => setSelectedDate(today.subtract(1, 'day'))} py={2}>
         <Text textAlign={`center`}>{today.subtract(1, 'day').format('MMM DD')}</Text>
       </SelectorBox>
